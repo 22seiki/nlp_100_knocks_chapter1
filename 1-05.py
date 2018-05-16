@@ -12,5 +12,6 @@ def n_gram(n, text):
     return l
 
 
-s = "I am an NLPer"
-print(n_gram(2, s))
+if __name__ == "__main__":
+    s = "I am an NLPer"
+    print(n_gram(2, s))

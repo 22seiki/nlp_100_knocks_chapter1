@@ -5,10 +5,8 @@
 def n_gram(n, text):
     l = []
     for i in range(len(text)):
-        if " " in text[i+n-1:i+n:]:
-            l.append(text[i:i+n-1:])
-        elif len(text) >= i+n:
-            l.append(text[i:i+n:])
+        if len(text[i:i+n]) > n-1:
+            l.append(text[i:i+n])
     return l
 
 

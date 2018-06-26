@@ -1,16 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import re
-
 s = "Hi He Lied Because Boron Could Not Oxidize Fluorine. \
     New Nations Might Also Sign Peace Security Clause. Arthur King Can."
-s = re.sub('[./,]', " ", s)
+only = (1, 5, 6, 7, 8, 9, 15, 16, 19)
 l = {}
-id = 0
-for n in s.split():
-    id += 1
-    if id % 2 == 1:
-        l[id] = n[0:1:]
+for i, n in enumerate(s.split()):
+    if i+1 in only:
+        l[n.strip(',.')[0:1]] = i+1
     else:
-        l[id] = n[0:2:]
+        l[n.strip(',.')[0:2]] = i+1
 print(l)
